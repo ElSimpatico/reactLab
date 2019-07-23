@@ -1,7 +1,7 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { routes } from "../../routes";
-import NavigationPages from "../navigation-pages/navigation-pages";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { routes } from '../../routes';
+import NavigationPages from '../navigation-pages/navigation-pages';
 
 const AppRouter: React.FC = () => {
     return (

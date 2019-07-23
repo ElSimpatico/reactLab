@@ -1,4 +1,4 @@
-export enum routesPage{
+export enum routesPage {
     carline = 'carline',
     engine = 'engine'
-};
+}
