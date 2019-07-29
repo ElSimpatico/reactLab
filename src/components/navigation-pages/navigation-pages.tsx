@@ -6,16 +6,28 @@ import { routesPage } from '../../enums/routes-page';
 
 import { useTranslation } from 'react-i18next';
 
+import { useStyles } from './styles';
+
 const NavigationPages: React.FC = () => {
     const [t, i18n] = useTranslation('common');
     const [tabSelected, setTabSelected] = useState(0);
+    const classes = useStyles();
 
     function changeTab(event: ChangeEvent<any>, newTabSelected: number) {
         setTabSelected(newTabSelected);
     }
+
     return (
-        <div style={{ position: 'absolute', bottom: '3px', width: '100%' }}>
-            <Tabs variant='fullWidth' value={tabSelected} onChange={changeTab}>
+        <div className={classes.position}>
+            <Tabs
+                classes={{
+                    root: classes.root,
+                    indicator: classes.indicator
+                }}
+                variant='fullWidth'
+                value={tabSelected}
+                onChange={changeTab}
+            >
                 <Tab label={t('model')} component={Link} to='/' />
                 <Tab
                     label={t('finish')}
