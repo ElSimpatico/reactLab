@@ -6,16 +6,40 @@ import NavigationPages from '../navigation-pages/navigation-pages';
 const AppRouter: React.FC = () => {
     return (
         <Router>
-            <Switch>
-                {routes.map((route, index) => {
-                    const routeProps = {
-                        ...route,
-                        key: `routes_${index}`
-                    };
-                    return <Route {...routeProps} />;
-                })}
-            </Switch>
-            <NavigationPages />
+            <div
+                className={'principalClass'}
+                style={{
+                    position: 'relative',
+                    height: 'calc(100vh - 22px)',
+                    width: '100vw'
+                }}
+            >
+                <Switch>
+                    {routes.map((route, index) => {
+                        return (
+                            <Route
+                                key={index}
+                                path={route.path}
+                                exact={route.path === '/' ? true : false}
+                                render={props => (
+                                    <div
+                                        className={'contentPages'}
+                                        style={{
+                                            margin: '20px',
+                                            overflowY: 'scroll',
+                                            overflowX: 'hidden',
+                                            maxHeight: '80vh'
+                                        }}
+                                    >
+                                        <route.component {...props} />
+                                    </div>
+                                )}
+                            />
+                        );
+                    })}
+                </Switch>
+                <NavigationPages routes={routes} />
+            </div>
         </Router>
     );
 };
