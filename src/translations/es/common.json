@@ -1,5 +1,8 @@
 {
-    "model": "Modelo",
-    "finish": "Acabado",
-    "exterior": "Exterior"
+    "routes": {
+        "carlinegroup": "Modelo",
+        "carline": "Acabado",
+        "engine": "Motor"
+    },
+    "from": "Desde"
 }
