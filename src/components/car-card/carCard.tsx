@@ -9,7 +9,7 @@ const CarCard: React.FC<CarCardProps> = props => {
     return (
         <div>
             <img
-                src={props.carLineGroup.image}
+                src={props.car.image}
                 style={{
                     margin: 'auto',
                     display: 'block'
@@ -20,8 +20,8 @@ const CarCard: React.FC<CarCardProps> = props => {
                     marginLeft: '50px'
                 }}
             >
-                <p>{props.carLineGroup.title}</p>
-                <p>{`${t('from')} ${props.carLineGroup.price}`}</p>
+                <p>{props.car.title}</p>
+                <p>{`${t('from')} ${props.car.price}`}</p>
             </div>
         </div>
     );

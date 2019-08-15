@@ -1,7 +1,7 @@
 {
     "routes": {
-        "carlinegroup": "Modelo",
-        "carline": "Acabado",
+        "carSelection": "Modelo",
+        "carBody": "Acabado",
         "engine": "Motor"
     },
     "from": "Desde"
