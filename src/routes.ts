@@ -1,9 +1,9 @@
-//Components
-import CarLineGroups from './pages/carLineGroups';
-import CarLine from './pages/carLine';
+// Pages component
+import CarSelection from './pages/car-selection';
+import CarBody from './pages/car-body';
 import Engine from './pages/engine';
 
-//Enums
+// Enums
 import { routesPage } from './enums/routes-page';
 
 export interface Router {
@@ -15,13 +15,13 @@ export interface Router {
 export const routes: Router[] = [
     {
         path: '/',
-        component: CarLineGroups,
-        key: routesPage.CARLINE_GROUP
+        component: CarSelection,
+        key: routesPage.CAR_SELECTION
     },
     {
-        path: `/${routesPage.CARLINE}`,
-        component: CarLine,
-        key: routesPage.CARLINE
+        path: `/${routesPage.CAR_BODY}`,
+        component: CarBody,
+        key: routesPage.CAR_BODY
     },
     {
         path: `/${routesPage.ENGINE}`,

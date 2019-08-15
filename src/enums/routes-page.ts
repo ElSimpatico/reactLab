@@ -1,5 +1,5 @@
 export enum routesPage {
-    CARLINE_GROUP = 'carlinegroup',
-    CARLINE = 'carline',
+    CAR_SELECTION = 'carSelection',
+    CAR_BODY = 'carBody',
     ENGINE = 'engine'
 }

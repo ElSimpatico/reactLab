@@ -9,18 +9,18 @@ import CarCard from '../components/car-card/carCard';
 import { SIZE_TYPES } from '../shared/components/spinner/spinnerProps';
 
 // Models
-import { CarLineGroup } from '../shared/models/carLineGroup';
+import { Car } from '../shared/models/car';
 
 // Services
-import { getCarLineGroups } from '../shared/services/carLineGroups';
+import { getCars } from '../shared/services/car';
 
-const CarLineGroups: React.FC = () => {
-    const [carLineGroups, setCarLineGroups] = useState<CarLineGroup[]>([]);
+const CarSelection: React.FC = () => {
+    const [cars, setCars] = useState<Car[]>([]);
     const [isLoading, setIsLoading] = useState(true);
 
     async function loadData() {
-        const carLineGroups = await getCarLineGroups();
-        setCarLineGroups(carLineGroups);
+        const carsResponse = await getCars();
+        setCars(carsResponse);
         setIsLoading(false);
     }
 
@@ -33,10 +33,10 @@ const CarLineGroups: React.FC = () => {
     }
     return (
         <Grid container spacing={6}>
-            {carLineGroups.map(carLineGroup => {
+            {cars.map(car => {
                 return (
                     <Grid xs={4} item>
-                        <CarCard carLineGroup={carLineGroup} />
+                        <CarCard car={car} />
                     </Grid>
                 );
             })}
@@ -44,4 +44,4 @@ const CarLineGroups: React.FC = () => {
     );
 };
 
-export default CarLineGroups;
+export default CarSelection;

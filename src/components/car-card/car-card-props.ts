@@ -1,5 +1,5 @@
-import { CarLineGroup } from '../../shared/models/carLineGroup';
+import { Car } from '../../shared/models/car';
 
 export interface CarCardProps {
-    carLineGroup: CarLineGroup;
+    car: Car;
 }
