@@ -1,4 +1,5 @@
 export enum routesPage {
-    carline = 'carline',
-    engine = 'engine'
+    CARLINE_GROUP = 'carlinegroup',
+    CARLINE = 'carline',
+    ENGINE = 'engine'
 }
