@@ -2,14 +2,12 @@ import { makeStyles, createStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles(() =>
     createStyles({
-        position: {
-            position: 'absolute',
-            bottom: '2px',
-            width: '100%'
-        },
         root: {
             backgroundColor: 'black',
-            color: 'white'
+            color: 'white',
+            position: 'absolute',
+            bottom: '0',
+            width: '100%'
         },
         indicator: {
             backgroundColor: '#ff571a',
