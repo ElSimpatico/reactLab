@@ -1,4 +1,4 @@
-export default [
+export const context = [
     {
         title: 'Mii 5P',
         image:

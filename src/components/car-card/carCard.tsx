@@ -9,7 +9,7 @@ import { CarCardProps } from './car-card-props';
 // Styles
 import { useStyles } from './styles';
 
-const CarCard: React.FC<CarCardProps> = props => {
+export const CarCard: React.FC<CarCardProps> = props => {
     const [t] = useTranslation('common');
     const classes = useStyles();
 
@@ -23,5 +23,3 @@ const CarCard: React.FC<CarCardProps> = props => {
         </div>
     );
 };
-
-export default CarCard;

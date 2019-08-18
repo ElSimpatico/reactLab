@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
 // Components
-import Spinner from '../shared/components/spinner/spinner';
+import { Spinner, SIZE_TYPES } from '@shared/components';
 import Grid from '@material-ui/core/Grid';
-import CarCard from '../components/car-card/carCard';
-
-// Properties
-import { SIZE_TYPES } from '../shared/components/spinner/spinnerProps';
+import { CarCard } from '@components';
 
 // Models
-import { Car } from '../shared/models/car';
+import { Car } from '@shared/models';
 
 // Services
-import { getCars } from '../shared/services/car';
+import { getCars } from '@services';
 
-const CarSelection: React.FC = () => {
+export const CarSelection: React.FC = () => {
     const [cars, setCars] = useState<Car[]>([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -43,5 +40,3 @@ const CarSelection: React.FC = () => {
         </Grid>
     );
 };
-
-export default CarSelection;

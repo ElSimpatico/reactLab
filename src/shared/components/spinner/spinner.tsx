@@ -4,7 +4,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import { useStyles } from './style';
 import { SpinnerProps, SIZE_TYPES } from './spinnerProps';
 
-const Spinner: React.FC<SpinnerProps> = props => {
+export const Spinner: React.FC<SpinnerProps> = props => {
     const classes = useStyles();
     function getSize(size: string): number {
         switch (size) {
@@ -29,5 +29,3 @@ const Spinner: React.FC<SpinnerProps> = props => {
         />
     );
 };
-
-export default Spinner;

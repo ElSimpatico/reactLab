@@ -1,10 +1,10 @@
-import { Car } from '../models/car';
-import carLineGroups from '../mocks/carLineGroups';
+import { Car } from '@shared/models';
+import { context } from '@mocks';
 
 function getCarsMock(): Promise<Car[]> {
     return new Promise(resolve => {
         setTimeout(() => {
-            resolve(carLineGroups);
+            resolve(context);
         }, 1000);
     });
 }
