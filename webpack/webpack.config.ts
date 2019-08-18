@@ -1,5 +1,6 @@
-import { resolve, join, dirname } from 'path';
+import { resolve, join } from 'path';
 import { Configuration } from 'webpack';
+import { Configuration as ConfigurationDevServer } from 'webpack-dev-server';
 
 // Plugins
 import { htmlWebpack } from './plugins/html-webpack';
@@ -7,7 +8,7 @@ import { cleanWebpack } from './plugins/clean-webpack';
 
 const rootDir = resolve(__dirname, '../src');
 
-const webpackConfig: Configuration = {
+const webpackConfig: Configuration | ConfigurationDevServer = {
     context: rootDir,
     mode: 'development',
     devtool: 'inline-source-map',

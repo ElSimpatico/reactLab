@@ -1,7 +1,7 @@
 import merge from 'webpack-merge';
 
 import webpackConfig from './webpack.config';
-// import { optimizeCss } from './plugins/css';
+import { extractText, optimizeCss } from './plugins/css-webpack';
 
 export default merge(webpackConfig, {
     mode: 'production',
@@ -28,6 +28,6 @@ export default merge(webpackConfig, {
                 }
             }
         }
-    }
-    // plugins: [optimizeCss],
+    },
+    plugins: [extractText, optimizeCss]
 });
