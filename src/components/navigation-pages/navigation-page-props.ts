@@ -1,4 +1,4 @@
-import { Router } from '../../routes';
+import { Router } from '@shared/routes';
 
 export interface NavigationPageProps {
     routes: Router[];

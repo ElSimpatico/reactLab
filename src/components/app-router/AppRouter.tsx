@@ -2,15 +2,15 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // Routes
-import { routes } from '../../routes';
+import { routes } from '@shared/routes';
 
 // Components
-import NavigationPages from '../navigation-pages/navigation-pages';
+import { NavigationPages } from '@components';
 
 // Styles
 import { useStyles } from './styles';
 
-const AppRouter: React.FC = () => {
+export const AppRouter: React.FC = () => {
     const classes = useStyles();
 
     return (
@@ -37,5 +37,3 @@ const AppRouter: React.FC = () => {
         </Router>
     );
 };
-
-export default AppRouter;

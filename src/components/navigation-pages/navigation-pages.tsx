@@ -10,12 +10,12 @@ import { Tabs, Tab } from '@material-ui/core';
 import { useStyles } from './styles';
 
 //Routes
-import { Router } from '../../routes';
+import { Router } from '@shared/routes';
 
 //Props
 import { NavigationPageProps } from './navigation-page-props';
 
-const NavigationPages: React.FC<NavigationPageProps> = props => {
+export const NavigationPages: React.FC<NavigationPageProps> = props => {
     const [t] = useTranslation('common');
     const [tabSelected, setTabSelected] = useState(0);
     const classes = useStyles();
@@ -47,5 +47,3 @@ const NavigationPages: React.FC<NavigationPageProps> = props => {
         </Tabs>
     );
 };
-
-export default NavigationPages;

@@ -1,5 +1,5 @@
 import React from 'react';
-import AppRouter from './components/app-router/AppRouter';
+import { AppRouter } from '@components';
 import { I18nextProvider } from 'react-i18next';
 import { i18n } from './translations/i18nextConfig';
 
