@@ -8,7 +8,7 @@ const router = JsonServer.router(dbDir);
 const middlewares = JsonServer.defaults();
 
 server.use(middlewares);
-server.use('/api', router);
+server.use('/api/rest', router);
 server.listen(3001, () => {
     console.log('Json server is running');
 });
