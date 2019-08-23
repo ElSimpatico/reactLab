@@ -1,0 +1,14 @@
+{
+    "cars": [
+        {
+            "title": "Title1",
+            "image": "urlImage",
+            "price": "123 €"
+        },
+        {
+            "title": "Title1",
+            "image": "urlImage",
+            "price": "123 €"
+        }
+    ]
+}
