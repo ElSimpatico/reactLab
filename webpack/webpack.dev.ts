@@ -8,7 +8,12 @@ export default merge(webpackConfig, {
     plugins: [new HotModuleReplacementPlugin()],
     devtool: 'cheap-module-eval-source-map',
     devServer: {
-        historyApiFallback: true,
-        hot: true
+        port: 3000,
+        proxy: {
+            '/api/rest': {
+                target: 'http://localhost:3001',
+                secure: false
+            }
+        }
     }
 });
