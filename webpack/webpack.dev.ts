@@ -1,17 +1,36 @@
+// Webpack
 import merge from 'webpack-merge';
+import webpackCommon from './webpack.common';
+
+// DotEnv
+import { DotenvParseOutput } from 'dotenv';
+
+// Plugins
 import { HotModuleReplacementPlugin } from 'webpack';
+import { defineEnvironmentPlugin } from './plugins/define-environment';
 
-import webpackConfig from './webpack.config';
+// Utils
+import {
+    getDotEnvironment,
+    ENVIRONMENT
+} from '../environments/utils/environment';
 
-export default merge(webpackConfig, {
+const environmentVariables: DotenvParseOutput = getDotEnvironment(
+    ENVIRONMENT.DEV
+);
+
+export default merge(webpackCommon, {
     mode: 'development',
-    plugins: [new HotModuleReplacementPlugin()],
     devtool: 'cheap-module-eval-source-map',
+    plugins: [
+        new HotModuleReplacementPlugin(),
+        defineEnvironmentPlugin(ENVIRONMENT.DEV)
+    ],
     devServer: {
-        port: 3000,
+        port: parseInt(environmentVariables.PORT),
         proxy: {
             '/api/rest': {
-                target: 'http://localhost:3001',
+                target: `${environmentVariables.HOST_PROXY}:${environmentVariables.PORT_PROXY}`,
                 secure: false
             }
         }

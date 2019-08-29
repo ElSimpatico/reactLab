@@ -1,9 +1,18 @@
+// Webpack
 import merge from 'webpack-merge';
+import webpackCommon from './webpack.common';
 
-import webpackConfig from './webpack.config';
+// DotEnv
+import { DotenvParseOutput } from 'dotenv';
+
+// Plugins
 import { extractText, optimizeCss } from './plugins/css-webpack';
+import { defineEnvironmentPlugin } from './plugins/define-environment';
 
-export default merge(webpackConfig, {
+//Utils
+import { ENVIRONMENT } from '../environments/utils/environment';
+
+export default merge(webpackCommon, {
     mode: 'production',
     performance: {
         hints: false
@@ -29,5 +38,9 @@ export default merge(webpackConfig, {
             }
         }
     },
-    plugins: [extractText, optimizeCss]
+    plugins: [
+        extractText,
+        optimizeCss,
+        defineEnvironmentPlugin(ENVIRONMENT.PRO)
+    ]
 });
