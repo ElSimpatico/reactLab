@@ -1,49 +1,24 @@
-import { resolve, join } from 'path';
 import { Configuration } from 'webpack';
-import { Configuration as ConfigurationDevServer } from 'webpack-dev-server';
+import WebpackDev from './webpack.dev';
+import WebpackPro from './webpack.prod';
 
-// Plugins
-import { htmlWebpack } from './plugins/html-webpack';
-import { cleanWebpack } from './plugins/clean-webpack';
+import { ENVIRONMENT } from '../environments/utils/environment';
 
-const rootDir = resolve(__dirname, '../src');
+/**
+ *
+ * @param env environment to run app
+ */
+function webpackSelector(env: ENVIRONMENT): Configuration {
+    switch (env) {
+        case ENVIRONMENT.DEV:
+            return WebpackDev;
+        case ENVIRONMENT.PRO:
+            return WebpackPro;
+        default:
+            throw new Error(
+                `${env} is not a recognized environment. webpack --config webpack/webpack.config.ts --env dev | pro`
+            );
+    }
+}
 
-const webpackConfig: Configuration | ConfigurationDevServer = {
-    context: rootDir,
-    mode: 'development',
-    devtool: 'inline-source-map',
-    resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx'],
-        alias: {
-            '@components': join(rootDir, 'components'),
-            '@enums': join(rootDir, 'enums'),
-            '@mocks': join(rootDir, 'mocks'),
-            '@pages': join(rootDir, 'pages'),
-            '@shared': join(rootDir, 'shared'),
-            '@services': join(rootDir, 'services')
-        }
-    },
-    entry: {
-        reactLab: join(rootDir, 'index.tsx')
-    },
-    output: {
-        path: resolve(rootDir, '../dist'),
-        filename: '[name].js'
-    },
-    module: {
-        rules: [
-            {
-                test: /\.tsx?$/,
-                exclude: /node_modules/,
-                loader: 'awesome-typescript-loader'
-            },
-            {
-                test: /\.css$/,
-                loaders: ['style-loader', 'css-loader']
-            }
-        ]
-    },
-    plugins: [cleanWebpack, htmlWebpack]
-};
-
-export default webpackConfig;
+export default webpackSelector;
