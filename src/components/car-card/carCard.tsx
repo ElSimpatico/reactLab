@@ -17,7 +17,7 @@ export const CarCard: React.FC<CarCardProps> = props => {
         <div>
             <img className={classes.multimedia} src={props.car.image} />
             <div className={classes.content}>
-                <p>{props.car.title}</p>
+                <p>{props.car.name}</p>
                 <p>{`${t('from')} ${props.car.price}`}</p>
             </div>
         </div>

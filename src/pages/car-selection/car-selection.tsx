@@ -1,14 +1,13 @@
+/** React imports */
 import React, { useState, useEffect } from 'react';
 
-// Components
-import { Spinner, SIZE_TYPES } from '@shared/components';
+/** Third-party imports */
 import Grid from '@material-ui/core/Grid';
-import { CarCard } from '@components';
 
-// Models
+/** Local imports */
+import { Spinner, SIZE_TYPES } from '@shared/components';
 import { Car } from '@shared/models';
-
-// Services
+import { CarCard } from '@components';
 import { getCars } from '@services';
 
 export const CarSelection: React.FC = () => {
@@ -16,8 +15,14 @@ export const CarSelection: React.FC = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     async function loadData() {
-        const carsResponse = await getCars();
-        setCars(carsResponse);
+        let carsResponse: Car[] = [];
+        try {
+            carsResponse = await getCars();
+            setCars(carsResponse);
+        } catch (err) {
+            // TODO handle error
+            console.error(err);
+        }
         setIsLoading(false);
     }
 
@@ -30,9 +35,9 @@ export const CarSelection: React.FC = () => {
     }
     return (
         <Grid container spacing={6}>
-            {cars.map(car => {
+            {cars.map((car: Car, index: number) => {
                 return (
-                    <Grid xs={4} item>
+                    <Grid xs={4} item key={`${car.key}_${index}`}>
                         <CarCard car={car} />
                     </Grid>
                 );
