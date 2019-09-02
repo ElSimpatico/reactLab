@@ -1,14 +1,23 @@
-import { Car } from '@shared/models';
-import { context } from '@mocks';
+/** Third-party libraries import */
+import { OK } from 'http-status-codes';
 
-function getCarsMock(): Promise<Car[]> {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            resolve(context);
-        }, 1000);
-    });
-}
+/** Local imports */
+import { Car } from '@shared/models';
+import { get } from './api/methods';
+import Endpoints from './api/endpoints';
+
+/**
+ * Get collection of car selection models
+ * @returns { Promise <Car[]> } Promise of car collection
+ * @throws Error if response status isn't OK
+ */
 export async function getCars(): Promise<Car[]> {
-    const carLineGroups: Car[] = await getCarsMock();
-    return carLineGroups;
+    const response = await get(Endpoints.cars.models);
+
+    if (response.status === OK) {
+        const cars: Car[] = response.data;
+        return cars;
+    } else {
+        throw new Error('Error getting the list of car selection models');
+    }
 }
