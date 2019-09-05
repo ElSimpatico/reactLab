@@ -13,6 +13,7 @@ const webpackCommon: Configuration = {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
         alias: {
             '@components': join(rootDir, 'components'),
+            '@core': join(rootDir, 'core'),
             '@enums': join(rootDir, 'enums'),
             '@mocks': join(rootDir, 'mocks'),
             '@pages': join(rootDir, 'pages'),

@@ -18,10 +18,11 @@
         "baseUrl": "./",
         "paths": {
             "@components": ["src/components"],
+            "@core/*": ["src/core/*"],
+            "@enums": ["src/enums"],
             "@pages": ["src/pages"],
-            "@shared/*": ["src/shared/*"],
             "@services": ["src/services"],
-            "@enums": ["src/enums"]
+            "@shared/*": ["src/shared/*"]
         }
     },
     "include": ["src"],
