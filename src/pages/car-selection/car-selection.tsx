@@ -1,5 +1,6 @@
 /** React imports */
 import React, { useState, useEffect } from 'react';
+import { withRouter } from 'react-router';
 
 /** Third-party imports */
 import Grid from '@material-ui/core/Grid';
@@ -8,11 +9,13 @@ import { useDispatch } from 'react-redux';
 /** Local imports */
 import { Spinner, SIZE_TYPES } from '@shared/components';
 import { Car } from '@shared/models';
+import { ROUTES_PAGE } from '@shared/enums';
 import { CarCard } from '@components';
 import { getCars } from '@services';
 import { setModelId } from '@shared/actions';
+import { RouteComponentProps } from 'react-router-dom';
 
-export const CarSelection: React.FC = () => {
+const CarSelectionInternal: React.FC<RouteComponentProps> = props => {
     const [cars, setCars] = useState<Car[]>([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -36,6 +39,7 @@ export const CarSelection: React.FC = () => {
 
     function selectCarModel(car: Car) {
         dispatch(setModelId(car.key));
+        props.history.push(`/${ROUTES_PAGE.CAR_BODY}`);
     }
 
     if (isLoading) {
@@ -53,3 +57,5 @@ export const CarSelection: React.FC = () => {
         </Grid>
     );
 };
+
+export const CarSelection = withRouter(CarSelectionInternal);
