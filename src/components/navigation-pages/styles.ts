@@ -12,6 +12,9 @@ export const useStyles = makeStyles(() =>
         indicator: {
             backgroundColor: '#ff571a',
             height: '4px'
+        },
+        disabled: {
+            opacity: 'initial !important' as 'initial'
         }
     })
 );
