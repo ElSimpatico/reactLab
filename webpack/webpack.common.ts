@@ -14,7 +14,6 @@ const webpackCommon: Configuration = {
         alias: {
             '@components': join(rootDir, 'components'),
             '@core': join(rootDir, 'core'),
-            '@enums': join(rootDir, 'enums'),
             '@mocks': join(rootDir, 'mocks'),
             '@pages': join(rootDir, 'pages'),
             '@shared': join(rootDir, 'shared'),

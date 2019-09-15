@@ -2,7 +2,7 @@
 import { CarSelection, CarBody, Engine } from '@pages';
 
 // Enums
-import { ROUTES_PAGE } from '@enums';
+import { ROUTES_PAGE } from './enums';
 
 export interface Router {
     path: string;

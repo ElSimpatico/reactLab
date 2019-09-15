@@ -19,7 +19,6 @@
         "paths": {
             "@components": ["src/components"],
             "@core/*": ["src/core/*"],
-            "@enums": ["src/enums"],
             "@pages": ["src/pages"],
             "@services": ["src/services"],
             "@shared/*": ["src/shared/*"]
