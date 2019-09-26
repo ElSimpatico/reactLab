@@ -1,7 +1,11 @@
-import { createStore, Store } from 'redux';
-import Reducer from './reducer';
+/** Third-party imports */
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { createStore, Store } from 'redux';
 
-export function createReduxStore(): Store {
+/** Local imports */
+import Reducer from './reducer';
+import { State } from '@shared/state';
+
+export function createReduxStore(): Store<State> {
     return createStore(Reducer, composeWithDevTools());
 }

@@ -1,6 +1,6 @@
 export default {
     cars: {
         models: '/cars/models',
-        model: '/cars/models/{modelId}'
+        bodies: '/cars/models/:modelId/bodies'
     }
 };
