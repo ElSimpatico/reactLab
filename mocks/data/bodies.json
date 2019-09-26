@@ -1,0 +1,14 @@
+{
+    "bodies": [
+        {
+            "key": "body_01",
+            "name": "style",
+            "price": "15.054 €"
+        },
+        {
+            "key": "body_02",
+            "name": "style edition",
+            "price": "23.458 €"
+        }
+    ]
+}
