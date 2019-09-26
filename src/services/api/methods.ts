@@ -3,9 +3,20 @@ import { AxiosRequestConfig } from 'axios';
 
 /** Local imports */
 import ApiCore from './core';
+import { buildUrl } from './utils';
 
-export function get(url: string, queryParams?: any): Promise<any> {
+export function get(
+    endpoint: string,
+    pathsVariable?: any,
+    queryParams?: any
+): Promise<any> {
+    let url = endpoint;
     let axiosConfig: AxiosRequestConfig = {};
+
+    if (pathsVariable) {
+        url = buildUrl(endpoint, pathsVariable);
+    }
+
     if (queryParams) {
         axiosConfig.params = { ...queryParams };
     }
