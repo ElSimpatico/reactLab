@@ -12,7 +12,7 @@ import { Car } from '@shared/models';
 import { ROUTES_PAGE } from '@shared/enums';
 import { CarCard } from '@components';
 import { getCars } from '@services';
-import { setModelId } from '@shared/actions';
+import { setModelId, setModelName, setTotalPrice } from '@shared/actions';
 import { RouteComponentProps } from 'react-router-dom';
 
 const CarSelectionInternal: React.FC<RouteComponentProps> = props => {
@@ -39,6 +39,8 @@ const CarSelectionInternal: React.FC<RouteComponentProps> = props => {
 
     function selectCarModel(car: Car) {
         dispatch(setModelId(car.key));
+        dispatch(setModelName(car.name));
+        dispatch(setTotalPrice(car.price));
         props.history.push(`/${ROUTES_PAGE.CAR_BODY}`);
     }
 
