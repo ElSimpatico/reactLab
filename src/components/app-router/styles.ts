@@ -9,7 +9,7 @@ export const useStyles = makeStyles(() =>
         },
         wrappedContent: {
             margin: '20px',
-            overflowY: 'scroll',
+            overflowY: 'auto',
             overflowX: 'hidden',
             maxHeight: '80vh'
         }

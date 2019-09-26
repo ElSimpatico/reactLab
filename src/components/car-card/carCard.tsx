@@ -15,11 +15,12 @@ export const CarCard: React.FC<CarCardProps> = props => {
 
     return (
         <div>
-            <img
-                className={classes.multimedia}
-                src={props.car.image}
-                onClick={() => props.onClick(props.car)}
-            />
+            <div className={classes.multimedia}>
+                <img
+                    src={props.car.image}
+                    onClick={() => props.onClick(props.car)}
+                />
+            </div>
             <div className={classes.content}>
                 <p>{props.car.name}</p>
                 <p>{`${t('from')} ${props.car.price}`}</p>
