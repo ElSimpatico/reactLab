@@ -7,8 +7,10 @@ export const useStyles = makeStyles(() =>
             height: 'calc(100vh - 22px)',
             width: '100vw'
         },
+        wrapped: {
+            margin: '20px'
+        },
         wrappedContent: {
-            margin: '20px',
             overflowY: 'auto',
             overflowX: 'hidden',
             maxHeight: '80vh'
