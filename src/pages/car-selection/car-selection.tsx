@@ -38,7 +38,7 @@ const CarSelectionInternal: React.FC<RouteComponentProps> = props => {
     }, []);
 
     function selectCarModel(car: Car) {
-        dispatch(setModelId(car.key));
+        dispatch(setModelId(car.id));
         dispatch(setModelName(car.name));
         dispatch(setTotalPrice(car.price));
         props.history.push(`/${ROUTES_PAGE.CAR_BODY}`);
@@ -51,7 +51,7 @@ const CarSelectionInternal: React.FC<RouteComponentProps> = props => {
         <Grid container spacing={6}>
             {cars.map((car: Car, index: number) => {
                 return (
-                    <Grid xs={4} item key={`${car.key}_${index}`}>
+                    <Grid xs={4} item key={`${car.id}_${index}`}>
                         <CarCard car={car} onClick={selectCarModel} />
                     </Grid>
                 );
