@@ -1,14 +1,28 @@
 {
     "bodies": [
         {
-            "key": "body_01",
+            "key": "CAR_BODY_1a91f982-fac8-4760-bd3f-f3f8d937a996",
             "name": "style",
+            "image": "mocks/images/perspective_car.png",
             "price": "15.054 €"
         },
         {
-            "key": "body_02",
+            "key": "CAR_BODY_964e5feb-e668-4f7c-9b31-48258aaa48ff",
             "name": "style edition",
+            "image": "mocks/images/perspective_car.png",
             "price": "23.458 €"
+        },
+        {
+            "key": "CAR_BODY_4ee2483b-1958-4083-ad07-6914155cf3fc",
+            "name": "style pro edition",
+            "image": "mocks/images/perspective_car.png",
+            "price": "27.257 €"
+        },
+        {
+            "key": "CAR_BODY_5a64d5cf-81ff-45ad-a525-1daaa5cdfb80",
+            "name": "advance",
+            "image": "mocks/images/perspective_car.png",
+            "price": "29.408 €"
         }
     ]
 }
