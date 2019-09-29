@@ -1,17 +1,21 @@
+/**React imports */
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-// Routes
+/**Local imports */
 import { routes } from '@shared/routes';
-
-// Components
-import { NavigationPages } from '@components';
-
-// Styles
+import { NavigationPages, Header } from '@components';
 import { useStyles } from './styles';
+import { useSelector } from 'react-redux';
+import { State } from '@shared/state';
 
 export const AppRouter: React.FC = () => {
     const classes = useStyles();
+
+    const { modelName, bodyName, totalPrice } = useSelector(
+        (state: State) => state.carConfigurator
+    );
+    const { showHeader } = useSelector((state: State) => state.layout);
 
     return (
         <Router>
@@ -24,8 +28,17 @@ export const AppRouter: React.FC = () => {
                                 path={route.path}
                                 exact={route.path === '/'}
                                 render={props => (
-                                    <div className={classes.wrappedContent}>
-                                        <route.component {...props} />
+                                    <div className={classes.wrapped}>
+                                        {showHeader && (
+                                            <Header
+                                                title={modelName}
+                                                subTitle={bodyName}
+                                                price={totalPrice}
+                                            ></Header>
+                                        )}
+                                        <div className={classes.wrappedContent}>
+                                            <route.component {...props} />
+                                        </div>
                                     </div>
                                 )}
                             />

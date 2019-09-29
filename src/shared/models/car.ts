@@ -5,7 +5,7 @@
  * @property { string } price Car model price
  */
 export interface Car {
-    key: string;
+    id: string;
     name: string;
     image: string;
     price: string;
