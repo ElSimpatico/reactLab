@@ -1,51 +1,51 @@
 {
     "cars": [
         {
-            "key": "CAR_MODEL_bc029fcb-c224-4d5d-a2d4-d3d25c874b89",
+            "id": "CAR_MODEL_bc029fcb-c224-4d5d-a2d4-d3d25c874b89",
             "name": "Mii 5P",
-            "image": "src/assets/images/profile_car.png",
+            "image": "mocks/images/profile_car.png",
             "price": "10.090 €"
         },
         {
-            "key": "CAR_MODEL_d7ad2666-66dd-4ab8-9494-95f635c08ea0",
+            "id": "CAR_MODEL_d7ad2666-66dd-4ab8-9494-95f635c08ea0",
             "name": "NUEVO IBIZA",
-            "image": "src/assets/images/profile_car.png",
+            "image": "mocks/images/profile_car.png",
             "price": "12.560 €"
         },
         {
-            "key": "CAR_MODEL_b75fc6df-5648-486d-ada1-992eaec88dca",
+            "id": "CAR_MODEL_b75fc6df-5648-486d-ada1-992eaec88dca",
             "name": "NUEVO ARONA",
-            "image": "src/assets/images/profile_car.png",
+            "image": "mocks/images/profile_car.png",
             "price": "15.050 €"
         },
         {
-            "key": "CAR_MODEL_988c43a5-9b9a-4123-8012-4288f48ad7e4",
+            "id": "CAR_MODEL_988c43a5-9b9a-4123-8012-4288f48ad7e4",
             "name": "LEÓN",
-            "image": "src/assets/images/profile_car.png",
+            "image": "mocks/images/profile_car.png",
             "price": "17.750 €"
         },
         {
-            "key": "CAR_MODEL_bb33fcaa-1893-4b34-84c9-daf13b69b5c6",
+            "id": "CAR_MODEL_bb33fcaa-1893-4b34-84c9-daf13b69b5c6",
             "name": "LEÓN Sportourer ST",
-            "image": "src/assets/images/profile_car.png",
+            "image": "mocks/images/profile_car.png",
             "price": "18.770 €"
         },
         {
-            "key": "CAR_MODEL_bc029fcb-c224-4d5d-a2d4-d3d25c87498b",
+            "id": "CAR_MODEL_bc029fcb-c224-4d5d-a2d4-d3d25c87498b",
             "name": "ATECA",
-            "image": "src/assets/images/profile_car.png",
+            "image": "mocks/images/profile_car.png",
             "price": "19.660 €"
         },
         {
-            "key": "CAR_MODEL_d7ad2666-66dd-4ab8-9494-95f635c080ae",
+            "id": "CAR_MODEL_d7ad2666-66dd-4ab8-9494-95f635c080ae",
             "name": "ALHAMBRA",
-            "image": "src/assets/images/profile_car.png",
+            "image": "mocks/images/profile_car.png",
             "price": "36.020 €"
         },
         {
-            "key": "CAR_MODEL_b75fc6df-5648-486d-ada1-992eaec88acd",
+            "id": "CAR_MODEL_b75fc6df-5648-486d-ada1-992eaec88acd",
             "name": "NUEVO TARRACO",
-            "image": "src/assets/images/profile_car.png",
+            "image": "mocks/images/profile_car.png",
             "price": "29.730 €"
         }
     ]
