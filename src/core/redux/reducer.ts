@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
-import { carConfiguratorReducer } from './reducers';
+import { carConfiguratorReducer, layoutReducer } from './reducers';
 
 export default combineReducers({
-    carConfigurator: carConfiguratorReducer
+    carConfigurator: carConfiguratorReducer,
+    layout: layoutReducer
 });
