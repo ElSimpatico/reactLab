@@ -1,5 +1,7 @@
 import React from 'react';
 
-export const Engine: React.FC = () => {
+const Engine: React.FC = () => {
     return <div>ENGINE</div>;
 };
+
+export default Engine;

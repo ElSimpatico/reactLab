@@ -1,7 +1,11 @@
-// Pages component
-import { CarSelection, CarBody, Engine } from '@pages';
+/**React imports */
+import { lazy } from 'react';
 
-// Enums
+/**Local imports */
+const CarSelection = lazy(() => import('@pages/car-selection/car-selection'));
+const CarBody = lazy(() => import('@pages/car-body/car-body'));
+const Engine = lazy(() => import('@pages/engine/engine'));
+
 import { ROUTES_PAGE } from './enums';
 
 export interface Router {

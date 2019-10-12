@@ -6,14 +6,6 @@ export const useStyles = makeStyles(() =>
             position: 'relative',
             height: 'calc(100vh - 22px)',
             width: '100vw'
-        },
-        wrapped: {
-            margin: '20px'
-        },
-        wrappedContent: {
-            overflowY: 'auto',
-            overflowX: 'hidden',
-            maxHeight: '80vh'
         }
     })
 );

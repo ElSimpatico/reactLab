@@ -1,8 +1,13 @@
+/** React imports */
 import React from 'react';
 
+/** Third-party imports */
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { useStyles } from './style';
+
+/** Local imports */
 import { SpinnerProps, SIZE_TYPES } from './spinnerProps';
+
+import { useStyles } from './style';
 
 export const Spinner: React.FC<SpinnerProps> = props => {
     const classes = useStyles();
@@ -21,11 +26,13 @@ export const Spinner: React.FC<SpinnerProps> = props => {
 
     const spinnerSize = props && props.size ? props.size : '';
     return (
-        <CircularProgress
-            classes={{
-                root: classes.root
-            }}
-            size={getSize(spinnerSize)}
-        />
+        <div className={classes.wrapped}>
+            <CircularProgress
+                classes={{
+                    root: classes.root
+                }}
+                size={getSize(spinnerSize)}
+            />
+        </div>
     );
 };

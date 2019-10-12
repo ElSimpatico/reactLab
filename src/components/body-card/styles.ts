@@ -2,10 +2,9 @@ import { makeStyles, createStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles(() =>
     createStyles({
-        multimedia: {
-            maxWidth: '365px',
-            height: '185px',
-            overflow: 'hidden',
+        carBodyImage: {
+            width: 'auto',
+            height: '50vh',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -18,8 +17,14 @@ export const useStyles = makeStyles(() =>
         hidde: {
             display: 'none'
         },
-        content: {
-            marginLeft: '50px'
+
+        cardBodyPrice: {
+            display: 'grid',
+            justifyContent: 'end',
+            justifyItems: 'end',
+            '& > span': {
+                fontSize: 'x-large'
+            }
         }
     })
 );

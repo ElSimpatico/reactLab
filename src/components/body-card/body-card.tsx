@@ -3,31 +3,31 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 /** Local imports */
+import { BodyCardProps } from './body-card-props';
 import { Spinner, SIZE_TYPES } from '@shared/components';
-import { CarCardProps } from './car-card-props';
 import { useStyles } from './styles';
 
-export const CarCard: React.FC<CarCardProps> = props => {
+export const BodyCard: React.FC<BodyCardProps> = props => {
+    const [isLoadingImage, setIsLoadingImage] = useState(true);
+
     const [t] = useTranslation('common');
     const classes = useStyles();
 
-    const [isLoadingImage, setIsLoadingImage] = useState(true);
-
     return (
-        <div>
-            <div className={classes.multimedia}>
+        <>
+            <div className={classes.carBodyImage}>
                 {isLoadingImage && <Spinner size={SIZE_TYPES.middle}></Spinner>}
                 <img
                     className={isLoadingImage ? classes.hidde : ''}
-                    src={props.car.image}
+                    src={props.body.image}
+                    alt={props.body.name}
                     onLoad={() => setIsLoadingImage(false)}
-                    onClick={() => props.onClick(props.car)}
-                />
+                ></img>
             </div>
-            <div className={classes.content}>
-                <p>{props.car.name}</p>
-                <p>{`${t('from')} ${props.car.price}`}</p>
+            <div className={classes.cardBodyPrice}>
+                <span>{t('from').toUpperCase()}</span>
+                <h2>{props.body.price}</h2>
             </div>
-        </div>
+        </>
     );
 };

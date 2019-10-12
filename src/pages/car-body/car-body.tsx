@@ -1,7 +1,6 @@
 /**React imports */
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useTranslation } from 'react-i18next';
 
 /**Third-party imports */
 import Slider from 'react-animated-slider';
@@ -13,11 +12,11 @@ import { Spinner, SIZE_TYPES } from '@shared/components';
 import { getBodiesByCarModel } from '@services';
 import { Car } from '@shared/models';
 import { setBodyName, setShowHeader } from '@shared/actions';
+import { BodyCard } from '@components';
 import { useStyles } from './styles';
 
-export const CarBody: React.FC = () => {
+const CarBody: React.FC = () => {
     const dispatch = useDispatch();
-    const [t] = useTranslation('common');
     const classes = useStyles();
 
     const [isLoading, setIsLoading] = useState(true);
@@ -27,6 +26,7 @@ export const CarBody: React.FC = () => {
 
     async function loadData() {
         const bodiesResponse: Car[] = await getBodiesByCarModel(modelId);
+
         dispatch(setBodyName(bodiesResponse[0].name));
         dispatch(setShowHeader(true));
         setBodies(bodiesResponse);
@@ -55,13 +55,7 @@ export const CarBody: React.FC = () => {
                     return (
                         <div key={`${body.id}_${index}`}>
                             <div className={classes.slideContent}>
-                                <div className={classes.carBodyImage}>
-                                    <img src={body.image} alt={body.name}></img>
-                                </div>
-                                <div className={classes.cardBodyPrice}>
-                                    <span>{t('from').toUpperCase()}</span>
-                                    <h2>{body.price}</h2>
-                                </div>
+                                <BodyCard body={body}></BodyCard>
                             </div>
                         </div>
                     );
@@ -70,3 +64,5 @@ export const CarBody: React.FC = () => {
         </div>
     );
 };
+
+export default CarBody;

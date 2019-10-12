@@ -10,10 +10,16 @@ import { useDispatch } from 'react-redux';
 import { Spinner, SIZE_TYPES } from '@shared/components';
 import { Car } from '@shared/models';
 import { ROUTES_PAGE } from '@shared/enums';
-import { CarCard } from '@components';
 import { getCars } from '@services';
-import { setModelId, setModelName, setTotalPrice } from '@shared/actions';
+import {
+    setModelId,
+    setModelName,
+    setTotalPrice,
+    setShowHeader
+} from '@shared/actions';
 import { RouteComponentProps } from 'react-router-dom';
+
+import { CarCard } from '@components';
 
 const CarSelectionInternal: React.FC<RouteComponentProps> = props => {
     const [cars, setCars] = useState<Car[]>([]);
@@ -24,6 +30,7 @@ const CarSelectionInternal: React.FC<RouteComponentProps> = props => {
     async function loadData() {
         let carsResponse: Car[] = [];
         try {
+            dispatch(setShowHeader(false));
             carsResponse = await getCars();
             setCars(carsResponse);
         } catch (err) {
@@ -44,10 +51,9 @@ const CarSelectionInternal: React.FC<RouteComponentProps> = props => {
         props.history.push(`/${ROUTES_PAGE.CAR_BODY}`);
     }
 
-    if (isLoading) {
-        return <Spinner size={SIZE_TYPES.big} />;
-    }
-    return (
+    return isLoading ? (
+        <Spinner size={SIZE_TYPES.big} />
+    ) : (
         <Grid container spacing={6}>
             {cars.map((car: Car, index: number) => {
                 return (
@@ -60,4 +66,6 @@ const CarSelectionInternal: React.FC<RouteComponentProps> = props => {
     );
 };
 
-export const CarSelection = withRouter(CarSelectionInternal);
+const CarSelection = withRouter(CarSelectionInternal);
+
+export { CarSelection as default };
