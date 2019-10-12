@@ -8,10 +8,15 @@ export const useStyles = makeStyles(() =>
             overflow: 'hidden',
             display: 'flex',
             justifyContent: 'center',
+            alignItems: 'center',
             '& img': {
                 width: '100%',
                 height: '100%'
             }
+        },
+
+        hidde: {
+            display: 'none'
         },
         content: {
             marginLeft: '50px'
