@@ -12,13 +12,13 @@ export const Header: React.FC<HeaderProps> = props => {
     const classes = useStyles();
     return (
         <Grid container>
-            <Grid xs={8}>
+            <Grid xs={8} item>
                 <div className={classes.title}>
                     <h1>{props.title}</h1>
                     {props.subTitle && <span>{props.subTitle}</span>}
                 </div>
             </Grid>
-            <Grid xs={4}>
+            <Grid xs={4} item>
                 <div className={classes.price}>
                     <h1>{props.price}</h1>
                 </div>
