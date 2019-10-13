@@ -4,3 +4,4 @@ export * from './car-card/carCard';
 export * from './body-card/body-card';
 export * from './navigation-pages/navigation-pages';
 export * from './header/header';
+export * from './next-button/next-button';
