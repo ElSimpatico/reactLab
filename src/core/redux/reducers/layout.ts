@@ -1,9 +1,15 @@
 import { LayoutState } from '../states';
 import { LayoutActions } from '@shared/actions';
-import { SET_SHOW_HEADER } from '../action-types';
+import {
+    SET_SHOW_HEADER,
+    SET_SHOW_NEXT_BUTTON,
+    SET_DISABLED_NEXT_BUTTON
+} from '../action-types';
 
 const initLayoutState: LayoutState = {
-    showHeader: false
+    showHeader: false,
+    showNextButton: false,
+    disabledNextButton: true
 };
 
 export function layoutReducer(
@@ -15,6 +21,16 @@ export function layoutReducer(
             return {
                 ...state,
                 showHeader: action.payload
+            };
+        case SET_SHOW_NEXT_BUTTON:
+            return {
+                ...state,
+                showNextButton: action.payload
+            };
+        case SET_DISABLED_NEXT_BUTTON:
+            return {
+                ...state,
+                disabledNextButton: action.payload
             };
         default:
             return state;
