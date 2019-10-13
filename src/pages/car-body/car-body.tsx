@@ -11,7 +11,12 @@ import { State } from '@shared/state';
 import { Spinner, SIZE_TYPES } from '@shared/components';
 import { getBodiesByCarModel } from '@services';
 import { Car } from '@shared/models';
-import { setBodyName, setShowHeader } from '@shared/actions';
+import {
+    setBodyName,
+    setShowHeader,
+    setShowNextButton,
+    setDisabledNextButton
+} from '@shared/actions';
 import { BodyCard } from '@components';
 import { useStyles } from './styles';
 
@@ -29,8 +34,10 @@ const CarBody: React.FC = () => {
 
         dispatch(setBodyName(bodiesResponse[0].name));
         dispatch(setShowHeader(true));
+        dispatch(setShowNextButton(true));
         setBodies(bodiesResponse);
         setIsLoading(false);
+        dispatch(setDisabledNextButton(false));
     }
 
     useEffect(() => {

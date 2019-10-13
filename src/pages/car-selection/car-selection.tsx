@@ -15,7 +15,8 @@ import {
     setModelId,
     setModelName,
     setTotalPrice,
-    setShowHeader
+    setShowHeader,
+    setShowNextButton
 } from '@shared/actions';
 import { RouteComponentProps } from 'react-router-dom';
 
@@ -31,6 +32,7 @@ const CarSelectionInternal: React.FC<RouteComponentProps> = props => {
         let carsResponse: Car[] = [];
         try {
             dispatch(setShowHeader(false));
+            dispatch(setShowNextButton(false));
             carsResponse = await getCars();
             setCars(carsResponse);
         } catch (err) {

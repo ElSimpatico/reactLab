@@ -4,5 +4,6 @@
         "carBody": "Acabado",
         "engine": "Motor"
     },
-    "from": "From"
+    "from": "From",
+    "next": "Next"
 }

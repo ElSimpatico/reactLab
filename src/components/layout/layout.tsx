@@ -1,18 +1,24 @@
+/** React imports */
 import React, { Suspense } from 'react';
-import { Switch, Route } from 'react-router';
-import { routes } from '@shared/routes';
-import { useStyles } from './styles';
 import { useSelector } from 'react-redux';
-import { State } from '@shared/state';
-import { SIZE_TYPES, Spinner } from '@shared/components';
+import { Switch, Route } from 'react-router';
+import { useTranslation } from 'react-i18next';
 
-import { NavigationPages } from '@components';
-import { Header } from '@components';
+/** Local imports */
+import { routes } from '@shared/routes';
+import { State } from '@shared/state';
+
+import { SIZE_TYPES, Spinner } from '@shared/components';
+import { Header, NavigationPages, NextButton } from '@components';
+
+import { useStyles } from './styles';
 
 export const Layout: React.FC = () => {
     const classes = useStyles();
 
-    const { showHeader } = useSelector((state: State) => state.layout);
+    const { showHeader, showNextButton } = useSelector(
+        (state: State) => state.layout
+    );
     const { modelName, bodyName, totalPrice } = useSelector(
         (state: State) => state.carConfigurator
     );
@@ -53,6 +59,7 @@ export const Layout: React.FC = () => {
                     );
                 })}
             </Switch>
+            {showNextButton && <NextButton></NextButton>}
             <NavigationPages routes={routes} />
         </>
     );
